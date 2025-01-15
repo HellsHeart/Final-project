@@ -1,1 +1,51 @@
+#@app.route("/<name>")
+#def user(name):
+    #return f"Hello {name}!"
+
+valid_users = {
+    "DaHoff": "Fitness25",
+}
+/
+# Function to check login credentials
+def check_login(username, password):
+    if username in valid_users and valid_users[username] == password:
+        return True
+    else:
+        return False
+
+# Function to display workout ideas after successful login
+def show_workout_ideas(username):
+    print(f"\nWelcome {username}!\n")
+    print("Here are some workout ideas:\n")
+    workout_ideas = [
+        "1. Push-ups: 3 sets of 15",
+        "2. Squats: 3 sets of 20",
+        "3. Planks: 3 sets of 30 seconds",
+        "4. Burpees: 3 sets of 10",
+        "5. Jumping Jacks: 3 sets of 30 seconds"
+    ]
+
+    for idea in workout_ideas:
+        print(idea)
+
+# Main program to handle login
+def login():
+    print("=== EXP Fitness Login ===")
+
+    # Taking username and password inputs from the user
+    username = input("Enter your username: ").strip()
+    password = input("Enter your password: ").strip()
+
+    # Check if login is successful
+    if check_login(username, password):
+        show_workout_ideas(username)
+    else:
+        print("Login Failed! Invalid username or password.")
+
+# Run the login function when the program is executed
+if __name__ == "__main__":
+    login()
+
+
+
 
